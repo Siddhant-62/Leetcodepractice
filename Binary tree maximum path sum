@@ -1,0 +1,30 @@
+Q - Binary tree maximum path sum leetcode 124
+Ans -  Approch we use DFS using recursive function to solve , first we check left and right if -ve we make whloe side of left and right -ve 
+then we find maxi , adding node.val ,left,right and compare with maxi whiche is -inf by default then update maxi .
+next find max Left and right and add to maxi. and return.
+TC - O(n)
+SC - O(H) - height {stack space}
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def maxPathSum(self, root):
+        self.maxi = float('-inf')
+        """
+        :type root: Optional[TreeNode]
+        :rtype: int
+        """-
+            left_sum = Solve(node.left)
+            if left_sum<0:
+                left_sum = 0
+            right_sum = Solve(node.right)
+            if right_sum<0:
+                right_sum = 0
+            self.maxi = max(self.maxi, left_sum + node.val + right_sum)
+            return node.val + max(left_sum,right_sum)
+        Solve(root)
+        return self.maxi
