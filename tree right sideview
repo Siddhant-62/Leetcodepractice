@@ -1,0 +1,32 @@
+Leet code 199 tree right side view
+sol - using DFS in right reverse order  , and recursive function .
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def rightSideView(self, root):
+        """
+        :type root: Optional[TreeNode]
+        :rtype: List[int]
+        """
+        ans=[]
+        def reversepostorder(node,level):
+            if node is None:
+                return 0
+            if level == len(ans):
+                ans.append(node.val)
+            if node.right:
+                reversepostorder(node.right , level+1)
+            if node.left:
+                reversepostorder(node.left, level+1)
+        reversepostorder(root,0)
+        return ans
+TC - O(n)
+SC - O(H)
+     
+
+
