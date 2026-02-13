@@ -1,0 +1,46 @@
+Graph introduction and how i implement using matrix and list and dictonary.
+A graph is a nonlinear data structure used to represent relationship between objects.
+1 - vertices(node) - entities in the graph 
+2 - Edges - Connection between nodes.
+use in real world applications like social networks, maps/navigation.
+many types of graphs - Directed, Undirected, Weighted, Unweighted, Complete, Regular, Cyclic, Acyclic, Connected, Disconnected, Simple, Multigraph, Bipartite, Tree.
+
+n = 5
+m = 6
+edges = [[1,2],[2,4],[3,4],[1,3],[1,3],[3,5],[5,4]]
+#1based index graph 
+ 
+matrix = [[0 for _ in range(n+1)] for _ in range(n+1)]
+for u, v in edges:
+  matrix[u][v] = 1
+  matrix[v][u] = 1
+print(matrix)
+
+Graph in python we use not only matrix also use list and dictionary.
+list is most suitable as compared to matrix and dictionary.
+list #TC - O(1)
+Dict #TC - O(n) worst case
+
+#LIST
+m=5
+n=6
+edges = [[1,2],[2,4],[3,4],[1,3],[3,5],[5,4]]
+
+list = [[] for _ in range(n+1)]
+for u,v in edges:
+  list[u].append(v)
+  list[v].append(u)
+print(list)
+
+#dict
+m=5
+n=6
+edges = [[1,2],[2,4],[3,4],[1,3],[3,5],[5,4]]
+#Dictoniary
+my_dict = {}
+for i in range(1,n+1):
+  my_dict[i]=[]
+for u,v in edges:
+  my_dict[u].append(v)
+  my_dict[v].append(u)
+print(my_dict)
