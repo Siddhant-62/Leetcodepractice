@@ -1,0 +1,19 @@
+What are Connected Components in a Graph?
+
+In graph theory, a connected component is a cluster of nodes where every node is reachable from every other node in that cluster, and there are no connections to nodes outside the cluster.
+
+- If a graph is fully connected, it has just one component.
+
+- If it’s disconnected, it has multiple components.
+
+*Component 1: Nodes {1, 2, 3, 4} are connected together.
+
+Component 2: Nodes {5, 6, 7} form another cluster.
+
+Component 3: Nodes {8, 9} form the last cluster.
+
+So this single graph has 3 connected components.
+
+connected components are used in (social networks)
+
+Network reliability (isolated subnetworks)
