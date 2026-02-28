@@ -1,0 +1,25 @@
+DFS in graph using visited Array , ans and recursion to travers in graph .
+def dfs(node,ans,visited,adj):
+    visited[node]=1  
+    ans.append(node)
+    for n in adj[node]:
+       if visited[n] == 0:
+           dfs(n,ans,visited,adj)
+no_of_node =8
+adj = [
+    [],
+    [2,4],
+    [1,3,6],
+    [2],
+    [1,5,7],
+    [4,8],
+    [2],
+    [4,8],
+    [5,7]
+    ]
+visited = [0]*(no_of_node + 1)
+ans = []
+dfs(1,ans,visited,adj)
+print(ans)
+# SC - O(2N) = O(N) [vist+ans] + stackspace_no of fn call ,O(n)
+# TC - O(N) + O(2E)
